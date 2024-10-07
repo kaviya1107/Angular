@@ -1,1 +1,18 @@
 <p>admin-page works!</p>
+<img src="\assets\download.jpg">
+<h1>{{firstname}} {{secondname}}</h1> <!-- string interpolation using one way binding-->
+
+<p>{{firstname+"nith"}}</p> <!--string interpolation concatination-->
+<h2 [innerText]="title"></h2> <!--property binding using one way binding  and not able to assign values in it-->
+<p>{{getMax(10,20)}}</p>
+<p>Multiplication={{100*80}}</p>
+<p>{{getName()}}</p>
+<p style.color={{color}}>This is Red</p>
+<button [disabled]="isdisabled">Clickme</button>
+<p>{{name}}</p>
+<br>
+<input type="text" [(ngModel)]="name"> <!--Two way binding--><br>
+<!--Event Binding-->
+<p>You have clicked {{clickcount}}</p>
+<p>You have clicked {{clickcount1}}</p>
+<button (click)="clickme();clickcount1=clickcount">ClickMe!!</button> <!--also use on-click instead of click-->

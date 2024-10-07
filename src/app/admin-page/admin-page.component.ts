@@ -6,5 +6,22 @@ import { Component } from '@angular/core';
   styleUrls: ['./admin-page.component.css']
 })
 export class AdminPageComponent {
-
+  firstname="kavi"
+  secondname="ya"
+  title="learn" 
+  getMax(first:number,second:number){ //using function
+    return Math.max(first,second);
+  }
+  getName(){
+    return this.firstname;
+  }
+  color="red" //style
+  isdisabled=true //property binding
+  name="MP" //two way binding
+  //event binding
+  clickcount=0;
+  clickcount1=1;
+  clickme(){
+    this.clickcount++;
+  }
 }
