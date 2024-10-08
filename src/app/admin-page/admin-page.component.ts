@@ -24,4 +24,15 @@ export class AdminPageComponent {
   clickme(){
     this.clickcount++;
   }
+  value='';
+  value1='';
+  handleinput(event:any){
+    this.value=(event.target as HTMLInputElement).value;
+  }
+  buttonclick(){
+    alert("hello");
+  }
+  keyuped(a:any){
+    console.log("typed");
+  }
 }

@@ -1,6 +1,10 @@
+
+<a routerLink="/main">home</a>
 <p>admin-page works!</p>
 <img src="\assets\download.jpg">
-<h1>{{firstname}} {{secondname}}</h1> <!-- string interpolation using one way binding-->
+<!--Data Binding-->
+
+<h1>{{firstname}} {{secondname}}</h1> <!-- string interpolation using "one way binding"-->
 
 <p>{{firstname+"nith"}}</p> <!--string interpolation concatination-->
 <h2 [innerText]="title"></h2> <!--property binding using one way binding  and not able to assign values in it-->
@@ -12,7 +16,27 @@
 <p>{{name}}</p>
 <br>
 <input type="text" [(ngModel)]="name"> <!--Two way binding--><br>
+
 <!--Event Binding-->
 <p>You have clicked {{clickcount}}</p>
-<p>You have clicked {{clickcount1}}</p>
+<p>You have clicked {{clickcount1}}</p>  
 <button (click)="clickme();clickcount1=clickcount">ClickMe!!</button> <!--also use on-click instead of click-->
+<br> 
+<input type="text" (input)="handleinput($event)">
+<p>{{value}}</p>
+<br>
+<input type="text" (input)="handleinput($event);value1=$any($event.target).value1">
+<p>{{value1}}</p>
+
+click event:<button (click)="buttonclick()">Alert</button><br>
+double click:<button (dblclick)="buttonclick()">Alert</button><br>
+<!-- <input type="text" (click)="buttonclick()"><br> -->
+key up:<input type="text" (keyup)="keyuped($event)"><br>
+<!--instead of click we also use key down,key press,key up,mouseclick,mouseover,mouseleave-->
+
+<!--Modules is defined as a collection of code..In this we using 
+@ngModule{
+declaration:[component list]
+imports :[module import eg :formsModule]
+sevices: [providers,bootstrap]}
+Module creation command: ng g m auth-->

@@ -1,1 +1,35 @@
 <p>main works!</p>
+<!--Directives-->
+<!-- Directives is defined as changing behaviour,appearence,and layout of the element.Threee types
+ 1.Component
+ 2.Structural
+ 3.Attribute -->
+
+ <!-- Structural -->
+ <p>{{title}}</p>
+ <ul>
+    <li *ngFor="let movie of movies">
+        {{movie}}
+    </li>
+</ul>
+<p>{{value}}</p>
+<div>
+    <table >
+        <thead>
+            <tr>
+            <th>Sno</th>
+            <th>name</th>
+            <th>age</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr
+            [ngClass]='{"bg-success":e}'
+                 *ngFor="let m of s; let i=index;let o=odd,let e=even">
+                <td>{{i+1}}</td>
+                <td>{{m.name}}</td>
+                <td>{{m.age}}</td>
+            </tr>      
+        </tbody>
+    </table>
+</div>

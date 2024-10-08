@@ -6,5 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./main.component.css']
 })
 export class MainComponent {
+  title="List"
+  movies=["Gilli","Unakkum Enakum","Life of Pazham"]
 
+  value="kavi"
+  s=[
+    {name:"jemi",age:80},
+    {name:"nith",age:200}
+  ]
 }
