@@ -6,12 +6,14 @@
  3.Attribute -->
 
  <!-- Structural -->
+
+  <!-- ng-for is used to list the content-->
  <p>{{title}}</p>
  <ul>
     <li *ngFor="let movie of movies">
         {{movie}}
     </li>
-</ul>
+</ul> 
 <p>{{value}}</p>
 <div>
     <table >
@@ -24,7 +26,7 @@
         </thead>
         <tbody>
             <tr
-            [ngClass]='{"bg-success":e}'
+            [ngClass]='{"bg-success":o}'
                  *ngFor="let m of s; let i=index;let o=odd,let e=even">
                 <td>{{i+1}}</td>
                 <td>{{m.name}}</td>
@@ -33,3 +35,49 @@
         </tbody>
     </table>
 </div>
+
+<!-- ng switch is used to display the contentof the value-->
+<label for="">Type Num</label>
+<input type="text" [(ngModel)]="num">
+<div [ngSwitch]="num">
+    <div *ngSwitchCase="1">One</div>
+    <div *ngSwitchCase="2">Two</div>
+    <div *ngSwitchCase="5">Five</div>
+</div>
+ 
+<!-- ng-if is used to show and hide the content..if it is true its show the content..if false it should hide it-->
+<label for="">Checkbox</label>
+<input type="checkbox" [(ngModel)]="showme"> <!--ngModel is used for both operation in two way binding-->
+<p *ngIf="showme">Showme Checked</p>
+<p *ngIf="!showme">Showme UnChecked</p>
+
+<!--ngif-- then and else -->
+<input type="checkbox" [(ngModel)]="values">
+<div *ngIf="values;then ifBlock;else elseBlock" ></div>
+<ng-template #ifBlock>
+    <p *ngIf="values">Values Visible</p>
+</ng-template>
+<ng-template #elseBlock>
+    <p *ngIf="!values">Values NotVisible</p>
+</ng-template>
+
+
+<!-- Attribute Directive -->
+RED<input type="checkbox" [(ngModel)]="EnableRed">
+BIG<input type="checkbox" [(ngModel)]="EnableBig">
+ITALIC<input type="checkbox" [(ngModel)]="EnableItalic">
+<!--primary is  a class name..classes is a method..ng class attribute instead of class="primary"-->
+<div [ngClass]="{
+    'primary':EnableRed,
+    'Big':EnableBig,
+    'Italic':EnableItalic
+}"> 
+    Sample
+</div> 
+<!--ng-style -->
+<div [ngStyle]="{'color':status=='available'?'red':'blue'}">Available</div>
+color:<input type="text" [(ngModel)]="color">
+<div [ngStyle]="{'color':color,'background-color':Backgroundcolor}"><h1>Sample</h1></div>
+
+background color:<input type="text" [(ngModel)]="Backgroundcolor">
+<div [ngStyle]="{'background-color':Backgroundcolor}"><h1>Sample</h1></div>
