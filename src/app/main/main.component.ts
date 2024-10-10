@@ -33,4 +33,7 @@ export class MainComponent {
    status="available";
    color="pink";
    Backgroundcolor="blue"
+
+  //  template
+  val=true;
 }

@@ -6,7 +6,6 @@
  3.Attribute -->
 
  <!-- Structural -->
-
   <!-- ng-for is used to list the content-->
  <p>{{title}}</p>
  <ul>
@@ -35,6 +34,7 @@
         </tbody>
     </table>
 </div>
+
 
 <!-- ng switch is used to display the contentof the value-->
 <label for="">Type Num</label>
@@ -81,3 +81,18 @@ color:<input type="text" [(ngModel)]="color">
 
 background color:<input type="text" [(ngModel)]="Backgroundcolor">
 <div [ngStyle]="{'background-color':Backgroundcolor}"><h1>Sample</h1></div>
+
+<!-- Template -->
+
+<!-- Template is a html file that defines the user interface of a component..It combines standard html with 
+ angular specific synatax to enable dynamic rendering of content,binding data and handling events
+
+Example:
+1.Display Data: Show values from component properties using interpolation (e.g., {{ value }}).
+2.Bind Events: Respond to user interactions (e.g., clicking a button) with event binding (e.g., (click)="method()").
+3.Use Structural Directives: Control the rendering of elements based on conditions (e.g., *ngIf, *ngFor).-->
+
+<button type="button" (click)="val=!val">
+    {{val?'Show':'Hide'}}</button>
+    <p *ngIf="val">Value is visible</p>
+    <p *ngIf="!val">Value is not visible</p>
