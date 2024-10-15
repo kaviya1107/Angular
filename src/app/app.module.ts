@@ -7,12 +7,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AdminPageComponent } from './admin-page/admin-page.component';
 import { MainComponent } from './main/main.component';
+import { ReversePipe } from './reverse.pipe';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     AdminPageComponent,
-    MainComponent
+    MainComponent,
+    ReversePipe
   ],
   imports: [
     BrowserModule,

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ReversePipe } from '../reverse.pipe';
 
 @Component({
   selector: 'app-main',
@@ -36,4 +37,13 @@ export class MainComponent {
 
   //  template
   val=true;
+
+//Pipes
+currentDate:Date=new Date(); //date
+message="Welcome to Angular"; //upperlower
+price=125; //currency
+fraction=2/4; //percent
+number=2.312; //decimal and format is 1.2-3
+name="kaviya jemima"; //titlecase
 }
+
